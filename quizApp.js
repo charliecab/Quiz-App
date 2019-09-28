@@ -1,7 +1,7 @@
 // question: options, text, correct answer //
 
-
-var questions = [
+$(function() { 
+let questions = [
     {
         options: ['Elendil', 'Isildur', 'Arathorn', 'Elessar'],
         text: `What is Aragorn's elven name?`,
@@ -29,13 +29,13 @@ var questions = [
     }
 ]
 
-var currentScreen = 'start'
+let currentScreen = 'start'
 
-var userScore = 0
+let userScore = 0
 
-var currentQuestion = 0
+let currentQuestion = 0
 
-var displayFeedback = false
+let displayFeedback = false
 
 let lastAnswerFeedback = ''
 
@@ -114,7 +114,7 @@ function renderQuestion(){
     </form><p>${displayFeedback ? lastAnswerFeedback: " "}</p>`)
 $('.questionForm').on('submit', function(e){
     e.preventDefault()
-   var selectedRadioButton = $('input[name=question1]:checked').val()
+   let selectedRadioButton = $('input[name=question1]:checked').val()
     submitAnswer(selectedRadioButton)
     renderMain()
 
@@ -148,3 +148,5 @@ function renderMain(){
 }
 
 renderMain()
+
+} )

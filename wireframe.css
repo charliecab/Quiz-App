@@ -1,0 +1,25 @@
+#container {
+    flex-flow: row;
+    justify-content: center;
+    width:400px;
+    height:400px;
+    margin:auto;
+    background-color: lightslategray;
+    border-radius:20px;
+    color: #FFFFFF;
+    font-weight: bold;
+    box-shadow: 1px 1px 1px #888;
+    padding: 50px;
+}
+
+p {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+.startButton {
+    display: flex;
+    flex-flow: row;
+    align-self: auto;
+}
