@@ -61,7 +61,7 @@ function submitAnswer(answerPicked){
     setTimeout(function(){
         continueToNextQuestion()
         renderMain()
-    }, 4000)
+    }, 3500)
 
 }
 
@@ -90,8 +90,10 @@ function resetGame(){
 
 
 function renderStart(){
- $('.main').html(`<p>Main Start Screen</p>
-    <button id="startButton">Start</button>`)
+ $('.main').html(`<div class="start-container">
+    <p>Test your Lord of the Rings Knowledge</p>
+    <button id="startButton">Start</button>
+    </div>`)
  $('#startButton').on('click', function (){
      startGame()
      renderMain()
@@ -102,16 +104,23 @@ function renderStart(){
 
 function renderQuestion(){
 
- $('.main').html(`<div>User Score: ${userScore}</div>
-    <div>Question: ${currentQuestion+1}/5</div>
-    <p>${questions[currentQuestion].text}</p>
-    <form class ="questionForm">
-    <div><input type="radio" name ="question1" value = "0">${questions[currentQuestion].options[0]}</input></div>
-    <div><input type="radio" name ="question1" value = "1">${questions[currentQuestion].options[1]}</input></div>
-    <div><input type="radio" name ="question1" value = "2">${questions[currentQuestion].options[2]}</input></div>
-    <div><input type="radio" name ="question1" value = "3">${questions[currentQuestion].options[3]}</input></div>
-    ${!displayFeedback ?'<button type="submit">Submit</button>' : " "}
-    </form><p>${displayFeedback ? lastAnswerFeedback: " "}</p>`)
+ $('.main').html(`
+        <div class="question-container">
+        <div>User Score: ${userScore}</div>
+            <div>Question: ${currentQuestion+1}/5</div>
+            <p>${questions[currentQuestion].text}</p>
+            <form class ="questionForm">
+            <div><input type="radio" name ="question1" value = "0">${questions[currentQuestion].options[0]}</input></div>
+            <div><input type="radio" name ="question1" value = "1">${questions[currentQuestion].options[1]}</input></div>
+            <div><input type="radio" name ="question1" value = "2">${questions[currentQuestion].options[2]}</input></div>
+            <div><input type="radio" name ="question1" value = "3">${questions[currentQuestion].options[3]}</input></div>
+            ${!displayFeedback ?'<button type="submit">Submit</button>' : " "}
+            </form>
+            <p>${displayFeedback ? lastAnswerFeedback: " "}</p>
+            </div>`
+    )
+
+
 $('.questionForm').on('submit', function(e){
     e.preventDefault()
    let selectedRadioButton = $('input[name=question1]:checked').val()
@@ -124,9 +133,10 @@ $('.questionForm').on('submit', function(e){
 
 
 function renderGameOver(){
- $('.main').html(`<p>Game Over</p>
- <button type="reset" class="resetButton">Reset the Quiz!</button>
- `)
+ $('.main').html(`<div class="game-over-container">
+    <p>Game Over</p>
+    <button type="reset" class="resetButton">Reset the Quiz!</button>
+ </div>`)
  $('.resetButton').on('click',function(e){
     e.preventDefault()
     resetGame()

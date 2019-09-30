@@ -1,0 +1,38 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+
+.question-container, .game-over-container, .start-container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width:75%;
+    height:55vh;
+    margin:center;
+    background-color: rgba(131, 141, 151,.7) ;
+    border-radius:20px;
+    color: #FFFFFF;
+    font-weight: bold;
+    box-shadow: 1px 1px 1px #888;
+    padding: 50px;
+}
+.background-image {
+    position: relative;
+        background-image: url('https://www.whats-on-netflix.com/wp-content/uploads/2018/07/is-the-lord-of-the-rings-trilogy-on-netflix-2018.jpg');
+        width: 100vw;
+        height: 100vh;    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-size: cover;
+    }
+
+.main {
+    width: 40%;
+    height: 70vh;
+}
+
